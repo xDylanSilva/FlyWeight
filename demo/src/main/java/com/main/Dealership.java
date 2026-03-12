@@ -8,7 +8,7 @@ import com.intrinsic.VehicleType;
 
 public class Dealership {
 
-    List<VehicleType> vehicleTypes;
+     List<VehicleType> vehicleTypes;
     private List<Vehicle> vehicles;
 
 
@@ -40,11 +40,5 @@ public class Dealership {
         return vehicles;
     }
 
-    public void showVehicles(){
-        System.out.println("Vehicles in Dealership:");
-        for (Vehicle vehicle : vehicles) {
-            vehicle.getInfo();
-            System.out.println();
-        }
-    }
+   
 }
