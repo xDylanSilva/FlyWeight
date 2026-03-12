@@ -31,10 +31,6 @@ public class Dealership {
     public void addVehicle(String licensePlate, float x, float y, float speed, VehicleType type){
         this.vehicles.add(new Vehicle(licensePlate, x, y, speed, type));
     }
-
-    public void produceVehicle(String licensePlate, float x, float y, float speed, VehicleType type){
-        addVehicle(licensePlate, x, y, speed, type);
-    }
     
     public List<Vehicle> getVehicles() {
         return vehicles;
