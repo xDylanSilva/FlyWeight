@@ -18,16 +18,6 @@ public class Vehicle {
         this.type = type;
     }
 
-
-    public void updatePosition(float x, float y){
-        this.x = x;
-        this.y = y;
-    }
-
-    public void updateSpeed(float speed){
-        this.speed = speed;
-    }
-
     public String getLicensePlate() {
         return licensePlate;
     }
