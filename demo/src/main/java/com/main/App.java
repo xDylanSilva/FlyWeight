@@ -1,5 +1,7 @@
 package com.main;
 
+import java.util.Random;
+
 import com.intrinsic.VehicleType;
 
 public class App {
@@ -21,13 +23,16 @@ public class App {
         
         for (int i = 0; i < 4000000; i++) {
             String licensePlate = "PLATE" + i;
-            float x = i % 1000;         // Valores aleatorios para posición
-            float y = (i / 1000) % 1000;
+            float x = i + 10;         // Valores aleatorios para posición
+            float y = (i - 10);
+            float speed = new Random().nextFloat() * 120; // Velocidad aleatoria entre 0 y 120
+            
+            speed = Math.round(speed * 100) / 100.0f; // Redondear a 2 decimales
             
             // Seleccionar tipo de forma cíclica 
             VehicleType selectedType = types[i % types.length];
-            
-            dealership.addVehicle(licensePlate, x, y, 60.0f, selectedType);
+
+            dealership.addVehicle(licensePlate, x, y, speed, selectedType);
         }
 
         // Medir memoria después de crear los vehículos
@@ -46,8 +51,9 @@ public class App {
         // Información de algunos vehículos
         System.out.println("\nMuestreo de vehículos (placas 100-109):");
         for (int i = 100; i < 110 && i < dealership.getVehicles().size(); i++) {
-            System.out.println("  Vehículo " + (i + 1) + ": " + dealership.getVehicles().get(i).getLicensePlate() 
-                + " - Tipo: " + dealership.getVehicles().get(i).getType());
+            System.out.println("Vehículo " + (i + 1) + ":");
+            dealership.getVehicles().get(i).getInfo();
+            System.out.println();
         }
 
     }

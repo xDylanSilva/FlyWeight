@@ -29,7 +29,7 @@ public class Vehicle {
     public void getInfo(){
         System.out.println("License Plate: " + licensePlate);
         System.out.println("Position: (" + x + ", " + y + ")");
-        System.out.println("Speed: " + speed);
+        System.out.println("Speed: " + speed + " km/h");
         System.out.println("Vehicle Type: " + getType());
     }
 
